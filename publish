@@ -13,7 +13,7 @@ cd "$REPO_DIR"
 git diff-files --quiet || exit $?
 
 # Save the hash of the last commit
-HEAD_SHA1=`git rev-parse --verify HEAD`
+HEAD_SHA1=`git rev-parse HEAD`
 
 # Remove existing build directory if it exists
 [ -d "$BUILD_DIR" ] && rm -rf "$BUILD_DIR"
@@ -24,5 +24,5 @@ git clone "$REPO_URL" "$BUILD_DIR" && cd "$BUILD_DIR" && git checkout "$BUILD_BR
 # Build the website
 bundle exec middleman build || exit $?
 
-# Commit the changes and publish push them to GitHub Pages
-git commit -am "Build the page ($HEAD_SHA1)" && git push origin "$BUILD_BRANCH"
+# Commit the changes and push them to GitHub Pages
+git add . && git commit -am "Build the page ($HEAD_SHA1)" && git push origin "$BUILD_BRANCH"
