@@ -10,24 +10,35 @@ html
   color: $default-color
   font-family: $typekit-serif-stack
   font-size: 18px
-  line-height: 1.55
+  line-height: 1.6
   -ms-text-size-adjust: 100%
   -webkit-text-size-adjust: 100%
+  -webkit-font-smoothing: antialiased
 
-body
-  padding: 2rem 0
+body, h1, dt, dd
   margin: 0
 
+p, dl
+  margin: 1em 0
+
 a
+  color: #883496
+  border-bottom: 3px solid rgba($default-color, 0.1)
+  text-decoration: none
+  +transition(border-color 0.3s ease-out)
+
   &:focus
     outline: thin dotted
 
   &:active,
   &:hover
+    border-color: rgba(#883496, 0.8)
     outline: 0
 
-abbr[title]
-  border-bottom: 1px dotted
+  &:active
+    color: #d40224
+    border-color: rgba(#d40224, 0.8)
+    +transition(none)
 
 b, strong
   font-weight: bold
@@ -41,7 +52,7 @@ iframe
   display: block
   width: 100%
   padding: 0
-  margin: 0
+  margin: 1em 0
   border: 0
 
 
