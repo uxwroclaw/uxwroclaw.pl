@@ -12,11 +12,11 @@
     font-size: 2rem
 
 .page-header
-  background: #f4f4f4
+  background: $header-background
 
   .page-section
-    padding-top: 5rem
-    padding-bottom: 4rem
+    padding-top: 85px
+    padding-bottom: 60px
 
 .page-subsection
   padding: 1rem 0
@@ -24,3 +24,28 @@
   h1
     color: inherit
     font-size: 1.5rem
+
+
+/*
+ * Page logo
+ * -------------------------------------------------------------------------- */
+
+@mixin image-replacement($image, $background-color: transparent)
+  $image-width: image-width($image) / 2
+  $image-height: image-height($image) / 2
+
+  &, &:before
+    overflow: hidden
+    width: $image-width
+    height: $image-height
+
+  &:before
+    content: ''
+    position: absolute
+    background: $background-color image-url($image) no-repeat
+    background-size: $image-width $image-height
+
+.page-logo
+  +image-replacement('logo.png', $header-background)
+  margin-bottom: 2rem
+  color: $brand-dark-gray
