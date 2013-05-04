@@ -6,7 +6,7 @@ article, aside, figcaption, figure, footer, header, nav, section
   display: block
 
 html
-  background: #fff
+  background: $default-background
   color: $default-color
   font-family: $typekit-serif-stack
   font-size: 18px
@@ -22,7 +22,7 @@ p, dl
   margin: 1em 0
 
 a
-  color: #883496
+  color: $link-color
   border-bottom: 3px solid rgba($default-color, 0.1)
   text-decoration: none
   +transition(border-color 0.3s ease-out)
@@ -32,12 +32,12 @@ a
 
   &:active,
   &:hover
-    border-color: rgba(#883496, 0.8)
+    border-color: rgba($link-color, 0.8)
     outline: 0
 
   &:active
-    color: #d40224
-    border-color: rgba(#d40224, 0.8)
+    color: $link-active-color
+    border-color: rgba($link-active-color, 0.8)
     +transition(none)
 
 b, strong

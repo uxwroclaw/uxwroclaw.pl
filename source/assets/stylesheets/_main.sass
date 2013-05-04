@@ -4,19 +4,12 @@
 
 .page-section
   max-width: 550px
-  padding: 2rem 100px
+  padding: 2rem $header-offset
 
   h1
     color: $brand-green
     font-family: $typekit-sans-serif-stack
     font-size: 2rem
-
-.page-header
-  background: $header-background
-
-  .page-section
-    padding-top: 85px
-    padding-bottom: 60px
 
 .page-subsection
   padding: 1rem 0
@@ -27,23 +20,15 @@
 
 
 /*
- * Page logo
+ * Page header & logo
  * -------------------------------------------------------------------------- */
 
-@mixin image-replacement($image, $background-color: transparent)
-  $image-width: image-width($image) / 2
-  $image-height: image-height($image) / 2
+.page-header
+  background: $header-background
 
-  &, &:before
-    overflow: hidden
-    width: $image-width
-    height: $image-height
-
-  &:before
-    content: ''
-    position: absolute
-    background: $background-color image-url($image) no-repeat
-    background-size: $image-width $image-height
+  .page-section
+    padding-top: $header-offset - 15px
+    padding-bottom: $header-offset * 0.6
 
 .page-logo
   +image-replacement('logo.png', $header-background)

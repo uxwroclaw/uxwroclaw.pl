@@ -1,0 +1,40 @@
+/*
+ * Variables
+ * -------------------------------------------------------------------------- */
+
+$default-color: #666
+$default-background: #fff
+$default-font-stack: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif
+
+$typekit-sans-serif-stack: 'adelle-sans', $default-font-stack
+$typekit-serif-stack: 'skolar', $default-font-stack
+
+$brand-green: #9fce56
+$brand-light-green: #bcfa5f
+$brand-dark-gray: #494949
+
+$link-color: #883496
+$link-active-color: #d40224
+
+$header-background: #f4f4f4
+$header-offset: 100px
+
+
+/*
+ * Mixins
+ * -------------------------------------------------------------------------- */
+
+@mixin image-replacement($image, $background-color: transparent)
+  $image-width: image-width($image) / 2
+  $image-height: image-height($image) / 2
+
+  &, &:before
+    overflow: hidden
+    width: $image-width
+    height: $image-height
+
+  &:before
+    content: ''
+    position: absolute
+    background: $background-color image-url($image) no-repeat
+    +background-size($image-width $image-height)
