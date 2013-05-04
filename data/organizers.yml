@@ -1,0 +1,19 @@
+- name: 'Szymon Boniecki'
+  company:
+    name: 'Monterail'
+    site: 'http://monterail.com/'
+
+- name: 'Iga Mościchowska'
+  company:
+    name: 'WitFlow'
+    site: 'http://witflow.com/'
+
+- name: 'Dominik Porada'
+  company:
+    name: 'Monterail'
+    site: 'http://monterail.com/'
+
+- name: 'Barbara Rogoś-Turek'
+  company:
+    name: 'WitFlow'
+    site: 'http://witflow.com/'

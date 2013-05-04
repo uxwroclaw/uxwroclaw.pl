@@ -1,0 +1,60 @@
+/*
+ * Base styles, some borrowed from Normalize.css
+ * -------------------------------------------------------------------------- */
+
+article, aside, figcaption, figure, footer, header, nav, section
+  display: block
+
+html
+  background: #fff
+  color: $default-color
+  font-family: $default-font-stack
+  font-size: 16px
+  line-height: 22px
+  -ms-text-size-adjust: 100%
+  -webkit-text-size-adjust: 100%
+
+body
+  padding: 2rem 0
+  margin: 0
+
+a
+  &:focus
+    outline: thin dotted
+
+  &:active
+  &:hover
+    outline: 0
+
+abbr[title]
+  border-bottom: 1px dotted
+
+b, strong
+  font-weight: bold
+
+img
+  display: block
+  max-width: 100%
+  border: 0
+
+iframe
+  display: block
+  width: 100%
+  padding: 0
+  margin: 0
+  border: 0
+
+
+/*
+ * Common classes, some borrowed from HTML5 Boilerplate
+ * -------------------------------------------------------------------------- */
+
+.hidden
+  border: 0
+  clip: rect(0 0 0 0)
+  height: 1px
+  margin: -1px
+  overflow: hidden
+  padding: 0
+  position: absolute
+  width: 1px

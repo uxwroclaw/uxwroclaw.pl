@@ -8,4 +8,27 @@
     = stylesheet_link_tag 'all'
 
   %body
+    %header.page-header
+      .page-section
+        %h1 UX Wrocław
+        %p Jesteśmy młodym oddziałem <a href="http://hci.org.pl/">CHI Polska</a>, który zrzesza wrocławską społeczność projektantów&nbsp;<abbr title="User Experience">UX</abbr>.
+        %p Organizujemy spotkania dla wszystkich zainteresowanych tematyką User Experience, Interaction Design, usability i&nbsp;<abbr title="Human–Computer Interaction">HCI</abbr>.
+
     = yield
+
+    %section.page-section
+      %h1 O spotkaniach
+      %p Uważamy, że we Wrocławiu brakuje przestrzeni do spotkań i dyskusji w dziedzinie projektowania doswiadczeń użyktownika, architektury informacji, interfejsów, interakcji i usability. Chcemy zapełnić tę lukę.
+
+      %section
+        %h1.hidden Organizatorzy
+
+        - data.organizers.each do |person|
+          %dl
+            %dt= person.name
+            %dd
+              %a{ href: person.company.site }= person.company.name
+
+    %footer.page-section
+      %h1 Kontakt
+      %p Napisz do nas: <a href="mailto:info@uxwroclaw.pl">info@uxwroclaw.pl</a>
