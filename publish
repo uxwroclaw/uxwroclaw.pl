@@ -1,0 +1,28 @@
+#!/bin/sh
+
+REPO_DIR=`dirname "$0"`
+REPO_URL=`git config --get remote.origin.url` || exit $?
+
+BUILD_BRANCH='gh-pages'
+BUILD_DIR="$REPO_DIR/build"
+
+# Enter the project directory
+cd "$REPO_DIR"
+
+# Proceed inside the clean working tree
+git diff-files --quiet || exit $?
+
+# Save the hash of the last commit
+HEAD_SHA1=`git rev-parse --verify HEAD`
+
+# Remove existing build directory if it exists
+[ -d "$BUILD_DIR" ] && rm -rf "$BUILD_DIR"
+
+# Clone the repository to build directory and switch to build branch
+git clone "$REPO_URL" "$BUILD_DIR" && cd "$BUILD_DIR" && git checkout "$BUILD_BRANCH" || exit $?
+
+# Build the website
+bundle exec middleman build || exit $?
+
+# Commit the changes and publish push them to GitHub Pages
+git commit -am "Build the page ($HEAD_SHA1)" && git push origin "$BUILD_BRANCH"
