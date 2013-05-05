@@ -37,7 +37,7 @@
 
 
 /*
- * Organizers
+ * Speakers & organizers
  * -------------------------------------------------------------------------- */
 
 .avatar
@@ -64,3 +64,32 @@
 .organizer-name
   padding-top: 2px
   text-transform: uppercase
+
+.speaker
+  padding-left: 60px
+
+  .speaker-image img
+    position: absolute
+    margin-left: -60px
+
+.speaker-name
+  font: 0.85em $typekit-sans-serif-stack
+  text-transform: uppercase
+
+  a
+    text-transform: none
+
+.speaker-presentation-title
+  font-weight: bold
+
+  a
+    font-weight: normal
+
+.speaker-presentation-description
+  margin-top: 0.5em
+  font-size: 0.85em
+
+.speaker-presentation-description--special
+  @extend .speaker-presentation-description
+  margin-top: 0
+  font-style: italic
