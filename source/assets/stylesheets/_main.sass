@@ -3,16 +3,24 @@
  * -------------------------------------------------------------------------- */
 
 .page-section
-  max-width: 550px
-  padding: 2rem $header-offset
+  max-width: $content-width
+  padding: 2rem percentage($header-offset / $total-width) 0
+
+  +viewport(wide)
+    padding-right: $header-offset
+    padding-left: $header-offset
+
+  &:last-of-type
+    padding-bottom: $header-offset * 0.6
 
   h1
     color: $brand-green
     font-family: $typekit-sans-serif-stack
     font-size: 2rem
+    line-height: 1.2
 
 .page-subsection
-  padding: 1rem 0
+  padding: 1rem 0 0
 
   h1
     color: inherit
@@ -27,8 +35,12 @@
   background: $header-background
 
   .page-section
-    padding-top: $header-offset - 15px
-    padding-bottom: $header-offset * 0.6
+    padding-top: 3rem
+    padding-bottom: 2rem
+
+    +viewport(wide)
+      padding-top: $header-offset - 15px
+      padding-bottom: $header-offset * 0.6
 
 .page-logo
   +image-replacement('logo.png', $header-background)
@@ -45,13 +57,14 @@
   height: 50px
   border-radius: 50%
 
-.organizers
-  +clearfix()
++viewport(wide)
+  .organizers
+    +clearfix()
 
-  .organizer
-    +box-sizing(border-box)
-    width: 50%
-    float: left
+    .organizer
+      +box-sizing(border-box)
+      width: 50%
+      float: left
 
 .organizer
   font: 0.85em $typekit-sans-serif-stack

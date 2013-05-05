@@ -3,6 +3,8 @@
 
   %head
     %meta{ charset: 'utf-8' }
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1' }
+
     %title= data.page.title || 'UX Wrocław'
 
     = stylesheet_link_tag 'all'
@@ -10,7 +12,7 @@
     %script{ src: '//use.typekit.net/aao4gyp.js' }
     %script try{Typekit.load();}catch(e){}
 
-  %body
+  %body{ ontouchstart: '' }
     %header.page-header
       .page-section
         %h1.page-logo UX Wrocław

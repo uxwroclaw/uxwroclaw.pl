@@ -19,10 +19,22 @@ $link-active-color: #d40224
 $header-background: #f4f4f4
 $header-offset: 100px
 
+$content-width: 550px
+$total-width: $content-width + $header-offset * 2
+
 
 /*
  * Mixins
  * -------------------------------------------------------------------------- */
+
+@mixin viewport($type)
+  @if $type == 'narrow'
+    @media (max-width: $total-width - 1px)
+      @content
+
+  @if $type == 'wide'
+    @media (min-width: $total-width)
+      @content
 
 @mixin image-replacement($image, $background-color: transparent)
   $image-width: image-width($image) / 2
