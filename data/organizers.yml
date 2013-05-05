@@ -1,19 +1,23 @@
 - name: 'Szymon Boniecki'
+  path_to_image: 'avatars/szymon.jpg'
   company:
     name: 'Monterail'
     site: 'http://monterail.com/'
 
 - name: 'Iga Mościchowska'
+  path_to_image: 'avatars/iga.jpg'
   company:
     name: 'WitFlow'
     site: 'http://witflow.com/'
 
 - name: 'Dominik Porada'
+  path_to_image: 'avatars/dominik.jpg'
   company:
     name: 'Monterail'
     site: 'http://monterail.com/'
 
 - name: 'Barbara Rogoś-Turek'
+  path_to_image: 'avatars/basia.jpg'
   company:
     name: 'WitFlow'
     site: 'http://witflow.com/'

@@ -26,11 +26,13 @@
       %section
         %h1.hidden Organizatorzy
 
-        - data.organizers.each do |person|
-          %dl
-            %dt= person.name
-            %dd
-              %a{ href: person.company.site }= person.company.name
+        .organizers
+          - data.organizers.each do |person|
+            %dl.organizer
+              %dd.organizer-image= image_tag person.path_to_image, class: 'avatar', alt: person.name
+              %dt.organizer-name= person.name
+              %dd.organizer-company
+                %a{ href: person.company.site }= person.company.name
 
     %section.page-section
       %h1 Kontakt

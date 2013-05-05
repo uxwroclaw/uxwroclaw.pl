@@ -34,3 +34,33 @@
   +image-replacement('logo.png', $header-background)
   margin-bottom: 2rem
   color: $brand-dark-gray
+
+
+/*
+ * Organizers
+ * -------------------------------------------------------------------------- */
+
+.avatar
+  width: 50px
+  height: 50px
+  border-radius: 50%
+
+.organizers
+  +clearfix()
+
+  .organizer
+    +box-sizing(border-box)
+    width: 50%
+    float: left
+
+.organizer
+  font: 0.85em $typekit-sans-serif-stack
+  +clearfix()
+
+.organizer-image
+  float: left
+  padding-right: 10px
+
+.organizer-name
+  padding-top: 2px
+  text-transform: uppercase
