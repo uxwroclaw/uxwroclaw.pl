@@ -48,5 +48,15 @@ $total-width: $content-width + $header-offset * 2
   &:before
     content: ''
     position: absolute
-    background: $background-color image-url($image) no-repeat
+    background: $background-color asset-data-uri($image) no-repeat
     +background-size($image-width $image-height)
+
+@mixin background-image($image, $image-2x, $background-color: transparent)
+  $image-width: image-width($image)
+  $image-height: image-height($image)
+
+  background: $background-color asset-data-uri($image) no-repeat
+  +background-size($image-width $image-height)
+
+  @media (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi)
+    background-image: asset-data-uri($image-2x)

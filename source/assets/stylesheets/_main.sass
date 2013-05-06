@@ -107,3 +107,31 @@
   @extend .speaker-presentation-description
   margin-top: 0
   font-style: italic
+
+
+/*
+ * Date & place
+ * -------------------------------------------------------------------------- */
+
+.details
+  @extend .organizers
+  margin: 1em 0
+
+.detail-date,
+.detail-location
+  @extend .organizer
+  min-height: 50px
+  padding-left: 60px
+
+.detail-date
+  +background-image('detail-date.png', 'detail-date@2x.png')
+
+.detail-location
+  +background-image('detail-location.png', 'detail-location@2x.png')
+
+.detail-date-day,
+.detail-location-name
+  @extend .organizer-name
+
+.detail-date-day
+  font-weight: bold
