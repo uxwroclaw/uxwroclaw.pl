@@ -84,6 +84,10 @@
 
 .speaker
   padding-left: 60px
+  margin: 1.5em 0
+
+  & + &
+    margin-top: 2em
 
   .speaker-image img
     position: absolute
@@ -95,6 +99,9 @@
 
   a
     text-transform: none
+
+  .speaker-presentation-title + &
+    margin-bottom: -0.1em
 
 .speaker-presentation-title
   padding: 0.2em 0 0.1em
