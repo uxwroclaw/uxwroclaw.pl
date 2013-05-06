@@ -3,8 +3,13 @@
  * -------------------------------------------------------------------------- */
 
 .page-section
+  overflow: hidden
   max-width: $content-width
   padding: 2rem percentage($header-offset / $total-width) 0
+
+  +viewport(tiny)
+    padding-right: 1rem
+    padding-left: 1rem
 
   +viewport(wide)
     padding-right: $header-offset
@@ -42,8 +47,11 @@
       padding-top: $header-offset - 15px
       padding-bottom: $header-offset * 0.6
 
+  & + .page-section
+    padding-top: $header-offset * 0.6
+
 .page-logo
-  +image-replacement('logo.png', $header-background)
+  +image-replacement("logo.png", $header-background, $scale: 1)
   margin-bottom: 2rem
   color: $brand-dark-gray
 
@@ -51,11 +59,6 @@
 /*
  * Speakers & organizers
  * -------------------------------------------------------------------------- */
-
-.avatar
-  width: 50px
-  height: 50px
-  border-radius: 50%
 
 +viewport(wide)
   .organizers
@@ -94,7 +97,9 @@
     text-transform: none
 
 .speaker-presentation-title
+  padding: 0.2em 0 0.1em
   font-weight: bold
+  line-height: 1.2
 
   a
     font-weight: normal
@@ -124,10 +129,10 @@
   padding-left: 60px
 
 .detail-date
-  +background-image('detail-date.png', 'detail-date@2x.png')
+  +background-image("detail-date.png", "detail-date@2x.png")
 
 .detail-location
-  +background-image('detail-location.png', 'detail-location@2x.png')
+  +background-image("detail-location.png", "detail-location@2x.png")
 
 .detail-date-day,
 .detail-location-name

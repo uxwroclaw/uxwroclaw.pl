@@ -23,7 +23,7 @@
 
     %section.page-section
       %h1 O spotkaniach
-      %p Uważamy, że we&nbsp;Wrocławiu brakuje przestrzeni do&nbsp;spotkań i&nbsp;dyskusji w&nbsp;dziedzinie projektowania doswiadczeń użyktownika, architektury informacji, interfejsów, interakcji i&nbsp;usability. <em>Chcemy zapełnić tę&nbsp;lukę.</em>
+      %p Uważamy, że we&nbsp;Wrocławiu brakuje przestrzeni do&nbsp;spotkań i&nbsp;dyskusji w&nbsp;dziedzinie projektowania doswiadczeń użyktownika, architektury informacji, interfejsów, interakcji i&nbsp;użyteczności. <em>Chcemy zapełnić tę&nbsp;lukę.</em>
 
       %section
         %h1.hidden Organizatorzy
@@ -33,9 +33,11 @@
             %dl.organizer
               %dd.organizer-image= image_tag person.path_to_image, class: 'avatar', alt: person.name
               %dt.organizer-name= person.name
-              %dd.organizer-company
+              %dd.organizer-company<
                 %a{ href: person.company.site }= person.company.name
 
     %section.page-section
       %h1 Kontakt
       %p Napisz do nas: <a href="mailto:info@uxwroclaw.pl">info@uxwroclaw.pl</a>
+
+/ Źródło strony: https://github.com/porada/ux-wroclaw

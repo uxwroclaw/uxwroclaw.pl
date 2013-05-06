@@ -4,17 +4,17 @@
 
 $default-color: #666
 $default-background: #fff
-$default-font-stack: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif
+$default-font-stack: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif
 
-$typekit-sans-serif-stack: 'klavika-web', $default-font-stack
-$typekit-serif-stack: 'skolar', $default-font-stack
+$typekit-sans-serif-stack: "klavika-web", $default-font-stack
+$typekit-serif-stack: "skolar", $default-font-stack
 
 $brand-green: #9fce56
 $brand-light-green: #bcfa5f
 $brand-dark-gray: #494949
 
 $link-color: #883496
-$link-active-color: #d40224
+$link-active-color: $brand-dark-gray
 
 $header-background: #f4f4f4
 $header-offset: 100px
@@ -28,15 +28,19 @@ $total-width: $content-width + $header-offset * 2
  * -------------------------------------------------------------------------- */
 
 @mixin viewport($type)
-  @if $type == 'narrow'
+  @if $type == "tiny"
+    @media (max-width: 400px)
+      @content
+
+  @if $type == "narrow"
     @media (max-width: $total-width - 1px)
       @content
 
-  @if $type == 'wide'
+  @if $type == "wide"
     @media (min-width: $total-width)
       @content
 
-@mixin image-replacement($image, $background-color: transparent)
+@mixin image-replacement($image, $background-color: transparent, $scale: 1)
   $image-width: image-width($image) / 2
   $image-height: image-height($image) / 2
 
@@ -46,10 +50,19 @@ $total-width: $content-width + $header-offset * 2
     height: $image-height
 
   &:before
-    content: ''
+    content: ""
     position: absolute
     background: $background-color asset-data-uri($image) no-repeat
     +background-size($image-width $image-height)
+
+  @if $scale < 1
+    $image-width: $scale * $image-width
+    $image-height: $scale * $image-height
+
+    +viewport(tiny)
+      &, &:before
+        height: $image-height
+        +background-size($image-width $image-height)
 
 @mixin background-image($image, $image-2x, $background-color: transparent)
   $image-width: image-width($image)
