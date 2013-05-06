@@ -67,7 +67,7 @@
       float: left
 
 .organizer
-  font: 0.85em $typekit-sans-serif-stack
+  @extend %caption
   +clearfix()
 
 .organizer-image
@@ -75,7 +75,8 @@
   padding-right: 10px
 
 .organizer-name
-  padding-top: 2px
+  padding-top: 0.5em
+  line-height: 1
   text-transform: uppercase
 
 .speaker
@@ -86,8 +87,7 @@
     margin-left: -60px
 
 .speaker-name
-  font-size: 0.85em
-  font-family: $typekit-sans-serif-stack
+  @extend %caption
   text-transform: uppercase
 
   a
