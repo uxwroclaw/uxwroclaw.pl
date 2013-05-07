@@ -1,9 +1,9 @@
 #!/bin/sh
 
-REPO_DIR=`dirname "$0"`
+REPO_DIR=`cd "$(dirname "$0")" && pwd`
 REPO_URL=`git config --get remote.origin.url` || exit $?
 
-BUILD_BRANCH='gh-pages'
+BUILD_BRANCH="gh-pages"
 BUILD_DIR="$REPO_DIR/build"
 
 # Enter the project directory
@@ -23,6 +23,9 @@ git clone "$REPO_URL" "$BUILD_DIR" && cd "$BUILD_DIR" && git checkout "$BUILD_BR
 
 # Build the website
 bundle exec middleman build || exit $?
+
+# Set the custom domain file
+cp "$REPO_DIR/CNAME" . || exit $?
 
 # Commit the changes and push them to GitHub Pages
 git add . && git commit -am "Build the page ($HEAD_SHA1)" && git push origin "$BUILD_BRANCH"
