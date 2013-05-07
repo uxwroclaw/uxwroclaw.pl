@@ -8,12 +8,17 @@ set :haml, { attr_wrapper: '"' }
 
 # Development-specific configuration
 configure :development do
+  set :is_development, true
+
   # Enable Sass source maps
   set :sass, { :debug_info => true }
 end
 
 # Build-specific configuration
 configure :build do
+  # Overwrite the variable
+  set :is_development, false
+
   # Minify assets
   activate :minify_css
   activate :minify_javascript
