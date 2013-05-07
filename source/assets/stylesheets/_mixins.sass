@@ -40,6 +40,10 @@ $total-width: $content-width + $header-offset * 2
     @media (min-width: $total-width)
       @content
 
+  @if $type == "expansive"
+    @media (min-width: 1200px)
+      @content
+
 @mixin image-replacement($image, $background-color: transparent, $scale: 1)
   $image-width: image-width($image) / 2
   $image-height: image-height($image) / 2
