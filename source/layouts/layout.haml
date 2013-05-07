@@ -9,6 +9,9 @@
 
     = stylesheet_link_tag 'all', media: 'all'
 
+    - data.open_graph.each_pair do |type, value|
+      %meta{ property: "og:#{type}", content: value }
+
     %script{ src: '//use.typekit.net/aao4gyp.js' }
     %script try{Typekit.load();}catch(e){}
 
