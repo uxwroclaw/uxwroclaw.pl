@@ -24,27 +24,28 @@
 
     = yield
 
-    %section.page-section
-      %h1 O spotkaniach
-      %p Uważamy, że we&nbsp;Wrocławiu brakuje przestrzeni do&nbsp;spotkań i&nbsp;dyskusji w&nbsp;dziedzinie projektowania doświadczeń użytkownika, architektury informacji, interfejsów, interakcji i&nbsp;użyteczności. <em>Chcemy&nbsp;zapełnić tę&nbsp;lukę.</em>
+    - unless is_404?
+      %section.page-section
+        %h1 O spotkaniach
+        %p Uważamy, że we&nbsp;Wrocławiu brakuje przestrzeni do&nbsp;spotkań i&nbsp;dyskusji w&nbsp;dziedzinie projektowania doświadczeń użytkownika, architektury informacji, interfejsów, interakcji i&nbsp;użyteczności. <em>Chcemy&nbsp;zapełnić tę&nbsp;lukę.</em>
 
-      %section
-        %h1.hidden Organizatorzy
+        %section
+          %h1.hidden Organizatorzy
 
-        .organizers
-          - data.organizers.each do |person|
-            %dl.organizer
-              %dd.organizer-image= image_tag person.path_to_image, class: 'avatar', alt: person.name
-              %dt.organizer-name= person.name
-              %dd.organizer-company<
-                %a{ href: person.company.site }= person.company.name
+          .organizers
+            - data.organizers.each do |person|
+              %dl.organizer
+                %dd.organizer-image= image_tag person.path_to_image, class: 'avatar', alt: person.name
+                %dt.organizer-name= person.name
+                %dd.organizer-company<
+                  %a{ href: person.company.site }= person.company.name
 
     %section.page-section
       %h1 Kontakt
       %p Napisz do nas na <a href="mailto:info@uxwroclaw.pl">info@uxwroclaw.pl</a> lub znajdź nas <a href="http://facebook.com/UXWroclaw">na&nbsp;Facebooku</a>.
       %iframe{ src: '//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2FUXWroclaw&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=true&amp;font=segoe+ui&amp;colorscheme=light&amp;action=like&amp;height=80&amp;appId=348736211898980', height: 80 }
 
-  - unless settings.is_development
+  - unless is_development?
     :javascript
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-40707960-1']);
