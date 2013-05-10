@@ -10,7 +10,7 @@ set :haml, { attr_wrapper: '"' }
 helpers do
   def is_404?
     page = current_page.path.split('.').first
-    page && Integer(page) === 404
+    page && page.to_i === 404
   end
 
   def is_development?
