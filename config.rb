@@ -6,11 +6,15 @@ set :images_dir, 'assets/images'
 # Make Haml use double quotes
 set :haml, { attr_wrapper: '"' }
 
-# Custom helpers
+# Self-explanatory custom helpers
 helpers do
   def is_404?
     page = current_page.path.split('.').first
     page && Integer(page) === 404
+  end
+
+  def is_development?
+    !build?
   end
 end
 
