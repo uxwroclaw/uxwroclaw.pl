@@ -19,10 +19,11 @@ HEAD_SHA1=`git rev-parse HEAD`
 [ -d "$BUILD_DIR" ] && rm -rf "$BUILD_DIR"
 
 # Clone the repository to build directory and switch to build branch
-git clone "$REPO_URL" "$BUILD_DIR" && cd "$BUILD_DIR" && git checkout "$BUILD_BRANCH" || exit $?
+git clone "$REPO_URL" "$BUILD_DIR" > /dev/null 2>&1 || exit $?
+cd "$BUILD_DIR" && git checkout "$BUILD_BRANCH" || exit $?
 
 # Build the website
-bundle exec middleman build || exit $?
+bundle exec middleman build > /dev/null 2>&1 || exit $?
 
 # Set the custom domain file
 cp "$REPO_DIR/CNAME" . || exit $?
