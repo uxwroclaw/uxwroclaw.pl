@@ -71,7 +71,7 @@ GEM
     rack-test (0.6.2)
       rack (>= 1.0)
     rb-fsevent (0.9.3)
-    sass (3.2.8)
+    sass (3.2.9)
     sinatra (1.3.6)
       rack (~> 1.4)
       rack-protection (~> 1.3)
