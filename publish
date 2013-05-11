@@ -25,8 +25,5 @@ cd "$BUILD_DIR" && git checkout "$BUILD_BRANCH" || exit $?
 # Build the website
 bundle exec middleman build > /dev/null 2>&1 || exit $?
 
-# Set the custom domain file
-cp "$REPO_DIR/CNAME" . || exit $?
-
 # Commit the changes and push them to GitHub Pages
 git add . && git commit -am "Build the page ($HEAD_SHA1)" && git push origin "$BUILD_BRANCH"
