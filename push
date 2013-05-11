@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cd `dirname "$0"`
+
+# Push and publish the page only if it’s built without errors
+bundle exec middleman build --clean --verbose || exit $?
+git push origin master "$@" && sleep 1 && ./publish

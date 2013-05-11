@@ -19,10 +19,10 @@ Set up the Middleman server to play with the website.
 bundle exec middleman server
 ```
 
-After you’re done tinkering, push the changes and run the [publishing script](publish) to automatically build the page and update the `gh-pages` branch with new content.
+After you’re done tinkering, push the changes and run the [publishing script](publish) to rebuild the page and automatically update the `gh-pages` branch with new content. It’s all done by the following command:
 
 ```bash
-git push origin master && ./publish
+./push
 ```
 
 Use `bundle exec middleman build` only to check the generated site.
