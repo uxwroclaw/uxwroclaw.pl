@@ -1,4 +1,4 @@
-# UX Wrocław [![Build Status](https://travis-ci.org/porada/ux-wroclaw.png)](https://travis-ci.org/porada/ux-wroclaw) [![Dependency Status](https://gemnasium.com/porada/ux-wroclaw.png)](https://gemnasium.com/porada/ux-wroclaw)
+# UX Wrocław [![Build Status](https://travis-ci.org/porada/uxwroclaw.pl.png)](https://travis-ci.org/porada/uxwroclaw.pl) [![Dependency Status](https://gemnasium.com/porada/uxwroclaw.pl.png)](https://gemnasium.com/porada/uxwroclaw.pl)
 
 This is the repository for the [official website](http://uxwroclaw.pl/) of the organization.
 
