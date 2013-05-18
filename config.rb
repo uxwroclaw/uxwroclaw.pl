@@ -20,6 +20,8 @@ end
 
 # Development-specific configuration
 configure :development do
+  activate :livereload
+
   # Enable Sass source maps
   set :sass, { :debug_info => true }
 end
