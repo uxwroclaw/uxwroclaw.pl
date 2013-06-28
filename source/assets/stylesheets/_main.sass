@@ -19,7 +19,7 @@
     margin: 0 auto
 
   &:last-of-type
-    padding-bottom: $header-offset * 0.6
+    padding-bottom: 2rem
 
   h1
     color: $brand-green
@@ -150,3 +150,43 @@
 
 .detail-date-day
   font-weight: bold
+
+
+/*
+ * Call for papers
+ * -------------------------------------------------------------------------- */
+
+.button
+  @extend %caption
+  display: inline-block
+  padding: 0.75rem 1.5rem
+  background: $link-color
+  border: 0
+  border-radius: 3px
+  box-shadow: 0 1px 0 rgba(#000, 0.2)
+  font-family: $typekit-sans-serif-stack
+  font-weight: normal
+  text-transform: uppercase
+  letter-spacing: 2px
+
+  &, &:active
+    color: #fff
+
+  &:active
+    position: relative
+    top: 1px
+
+  &:hover, &:active
+    background: $brand-green
+
+.button-container
+  padding: 0.5rem
+  text-align: center
+
+.page-notice
+  background: $brand-dark-gray
+  color: darken($header-background, 10%)
+  margin: -0.5rem 0 1rem
+
+.page-notice-wrapper
+  @extend .page-section
