@@ -1,4 +1,4 @@
-# UX Wrocław [![Build Status](https://travis-ci.org/porada/uxwroclaw.pl.png)](https://travis-ci.org/porada/uxwroclaw.pl)
+# UX Wrocław [![Build Status](https://travis-ci.org/uxwroclaw/uxwroclaw.pl.png)](https://travis-ci.org/uxwroclaw/uxwroclaw.pl)
 
 This is the repository for the [official website](http://uxwroclaw.pl/) of the organization.
 
