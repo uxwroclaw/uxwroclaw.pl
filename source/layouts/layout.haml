@@ -47,7 +47,7 @@
 
     = partial 'shared/call_for_papers', locals: { plural: true }
 
-  - unless is_development?
+  - if build?
     :javascript
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-40707960-1']);

@@ -12,10 +12,6 @@ helpers do
     page = current_page.path.split('.').first
     page && page.to_i === 404
   end
-
-  def is_development?
-    !build?
-  end
 end
 
 # Development-specific configuration
