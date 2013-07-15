@@ -8,7 +8,7 @@ set :haml, { attr_wrapper: '"' }
 
 # Self-explanatory custom helpers
 helpers do
-  def is_404?
+  def page_not_found?
     page = current_page.path.split('.').first
     page && page.to_i === 404
   end
