@@ -29,7 +29,7 @@ a
   color: $link-color
   border-bottom: 3px solid rgba($default-color, 0.1)
   text-decoration: none
-  +transition(background-color 0.2s ease-out, border-color 0.3s ease-out)
+  transition: background-color 0.2s ease-out, border-color 0.3s ease-out
 
   &:focus
     outline: thin dotted
@@ -42,7 +42,7 @@ a
   &:active
     color: $link-active-color
     border-color: rgba($link-active-color, 0.8)
-    +transition(none)
+    transition: none
     -webkit-tap-highlight-color: transparent
 
 b, strong

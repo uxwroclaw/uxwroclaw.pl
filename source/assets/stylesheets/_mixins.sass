@@ -57,7 +57,7 @@ $total-width: $content-width + $header-offset * 2
     content: ""
     position: absolute
     background: $background-color asset-data-uri($image) no-repeat
-    +background-size($image-width $image-height)
+    background-size: $image-width $image-height
 
   @if $scale < 1
     $image-width: $scale * $image-width
@@ -66,14 +66,20 @@ $total-width: $content-width + $header-offset * 2
     +viewport(tiny)
       &, &:before
         height: $image-height
-        +background-size($image-width $image-height)
+        background-size: $image-width $image-height
 
 @mixin background-image($image, $image-2x, $background-color: transparent)
   $image-width: image-width($image)
   $image-height: image-height($image)
 
   background: $background-color asset-data-uri($image) no-repeat
-  +background-size($image-width $image-height)
+  background-size: $image-width $image-height
 
   @media (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi)
     background-image: asset-data-uri($image-2x)
+
+@mixin clearfix
+  &:after
+    content: ""
+    display: table
+    clear: both
