@@ -6,6 +6,12 @@ set :images_dir, 'assets/images'
 # Make Haml use double quotes
 set :haml, { attr_wrapper: '"' }
 
+# Use Autoprefixer for stylesheets
+after_configuration do
+  require 'autoprefixer-rails'
+  AutoprefixerRails.install(sprockets)
+end
+
 # Self-explanatory custom helpers
 helpers do
   def page_not_found?
