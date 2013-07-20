@@ -7,10 +7,7 @@ set :images_dir, 'assets/images'
 set :haml, { attr_wrapper: '"' }
 
 # Use Autoprefixer for stylesheets
-after_configuration do
-  require 'autoprefixer-rails'
-  AutoprefixerRails.install(sprockets)
-end
+activate :autoprefixer
 
 # Self-explanatory custom helpers
 helpers do
