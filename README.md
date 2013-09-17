@@ -6,11 +6,13 @@ It’s based on [Middleman](http://middlemanapp.com/) and is hosted on [GitHub P
 
 ## Development
 
-Install dependencies first.
+Install dependencies first, then make `push` and `publish` scripts executable.
 
 ```bash
 gem install bundler
 bundle install
+
+chmod +x push publish
 ```
 
 Set up the Middleman server to play with the website.
