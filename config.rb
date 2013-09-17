@@ -7,7 +7,9 @@ set :images_dir, 'assets/images'
 set :haml, { attr_wrapper: '"' }
 
 # Use Autoprefixer for stylesheets
-activate :autoprefixer
+activate :autoprefixer do |config|
+  config.browsers = 'last 2 versions'
+end
 
 # Self-explanatory custom helpers
 helpers do
