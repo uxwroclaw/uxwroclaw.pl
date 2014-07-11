@@ -17,11 +17,6 @@ helpers do
   end
 end
 
-# Development-specific configuration
-configure :development do
-  activate :livereload
-end
-
 # Build-specific configuration
 configure :build do
   # Minify assets
