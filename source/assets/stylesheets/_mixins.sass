@@ -3,7 +3,7 @@
  * -------------------------------------------------------------------------- */
 
 $default-color: #666
-$default-background: #fff
+$default-background: #f8f8f5
 
 $default-sans-serif-stack: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif
 $default-serif-stack: "Chaparral Pro", Georgia, "Times New Roman", Times, sans-serif
@@ -15,10 +15,10 @@ $brand-green: #9fce56
 $brand-light-green: #bcfa5f
 $brand-dark-gray: #494949
 
-$link-color: #883496
+$link-color: #2C7195
 $link-active-color: $brand-dark-gray
 
-$header-background: #f4f4f4
+$header-background: #fff
 $header-offset: 100px
 
 $content-width: 550px
@@ -40,10 +40,6 @@ $total-width: $content-width + $header-offset * 2
 
   @if $type == "wide"
     @media (min-width: $total-width)
-      @content
-
-  @if $type == "expansive"
-    @media (min-width: 1200px)
       @content
 
 @mixin image-replacement($image, $background-color: transparent, $scale: 1)
@@ -70,15 +66,12 @@ $total-width: $content-width + $header-offset * 2
         height: $image-height
         background-size: $image-width $image-height
 
-@mixin background-image($image, $image-2x, $background-color: transparent)
-  $image-width: image-width($image)
-  $image-height: image-height($image)
+@mixin retina-background-image($image)
+  $image-width: floor(image-width($image) / 2)
+  $image-height: floor(image-height($image) / 2)
 
-  background: $background-color asset-data-uri($image) no-repeat
+  background: asset-data-uri($image) no-repeat
   background-size: $image-width $image-height
-
-  @media (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi)
-    background-image: asset-data-uri($image-2x)
 
 @mixin clearfix
   &:after

@@ -1,5 +1,5 @@
 - name: 'Szymon Boniecki'
-  path_to_image: 'avatars/szymon.jpg'
+  path_to_image: 'avatars/szymon.png'
   company:
     name: 'Monterail'
     site: 'http://monterail.com/'
@@ -13,8 +13,8 @@
 - name: 'Dominik Porada'
   path_to_image: 'avatars/dominik.jpg'
   company:
-    name: 'Monterail'
-    site: 'http://monterail.com/'
+    name: 'Pilot'
+    site: 'http://pilot.co/'
 
 - name: 'Barbara Rogoś–Turek'
   path_to_image: 'avatars/basia.jpg'

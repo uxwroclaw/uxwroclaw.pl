@@ -12,10 +12,6 @@
     padding-left: 1rem
 
   +viewport(wide)
-    padding-right: $header-offset
-    padding-left: $header-offset
-
-  +viewport(expansive)
     margin: 0 auto
 
   &:last-of-type
@@ -139,10 +135,10 @@
   padding-left: 60px
 
 .detail-date
-  +background-image("detail-date.png", "detail-date@2x.png")
+  +retina-background-image("detail-date.png")
 
 .detail-location
-  +background-image("detail-location.png", "detail-location@2x.png")
+  +retina-background-image("detail-location.png")
 
 .detail-date-day,
 .detail-location-name
@@ -163,7 +159,6 @@
   background: $link-color
   border: 0
   border-radius: 3px
-  box-shadow: 0 1px 0 rgba(#000, 0.2)
   font-family: $typekit-sans-serif-stack
   font-weight: normal
   text-transform: uppercase
@@ -185,7 +180,7 @@
 
 .page-notice
   background: $brand-dark-gray
-  color: darken($header-background, 10%)
+  color: darken($header-background, 20%)
   margin: -0.5rem 0 1rem
 
   .page-section:last-of-type + &
