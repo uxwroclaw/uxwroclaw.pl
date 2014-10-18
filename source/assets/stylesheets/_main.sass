@@ -92,6 +92,18 @@
     position: absolute
     margin-left: -60px
 
+  .speaker-image--small
+    @extend .speaker-image
+
+    img
+      width: 40px
+      height: 40px
+      margin: -6px 0 0 -69px
+
+    & + .speaker-image--small img
+      margin: 14px 0 0 -49px
+      border: 3px solid $default-background
+
 .speaker-name
   @extend %caption
   text-transform: uppercase
