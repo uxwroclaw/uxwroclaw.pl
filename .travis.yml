@@ -1,5 +1,11 @@
-language: "ruby"
-rvm: "2.0.0"
-script: "bundle exec middleman build --clean --verbose"
+language: ruby
+rvm:
+  - 2.2
 branches:
-  only: "master"
+  only: master
+script:
+  - bundle exec middleman build --clean --verbose
+sudo: false
+cache: bundler
+matrix:
+  fast_finish: true
