@@ -10,11 +10,11 @@
     name: 'WitFlow'
     site: 'http://witflow.com/'
 
-- name: 'Dominik Porada'
-  path_to_image: 'avatars/dominik.jpg'
+- name: 'Paweł Hawrylak'
+  path_to_image: 'avatars/pawel.png'
   company:
-    name: 'Pilot'
-    site: 'http://pilot.co/'
+    name: 'Monterail'
+    site: 'http://monterail.com/'
 
 - name: 'Barbara Rogoś–Turek'
   path_to_image: 'avatars/basia.jpg'
