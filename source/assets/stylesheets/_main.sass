@@ -110,14 +110,31 @@
     margin-top: 65px
 
   .speaker-imagee--small
-    @extend .speaker-image
+    @extend .speaker-imagee
 
     img
       width: 40px
       height: 40px
       margin: -6px 0 0 -69px
 
-    & + .speaker-image--small img
+    & + .speaker-imagee--small img
+      margin: 14px 0 0 -49px
+      border: 3px solid $default-background
+
+  .speaker-imageee img
+    position: absolute
+    margin-left: -60px
+    margin-top: 6130px
+
+  .speaker-imageee--small
+    @extend .speaker-imageee
+
+    img
+      width: 40px
+      height: 40px
+      margin: -6px 0 0 -69px
+
+    & + .speaker-imageee--small img
       margin: 14px 0 0 -49px
       border: 3px solid $default-background
 
